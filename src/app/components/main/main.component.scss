@@ -49,11 +49,11 @@
   .main-gradient {
     position: absolute;
     height: 1500px;
-    width: 1800px;
+    width: 1300px;
     border-radius: 50%;
     background: radial-gradient(circle 700px, $orange-color, transparent);
     opacity: 0.35;
-    right: -350px;
+    right: 0;
     top: -457px;
     z-index: -1;
     filter: blur(80px);
@@ -263,7 +263,7 @@
 
     .main-gradient {
       max-width: 100%;
-      width: 100%;
+      //width: 100%;
       filter: blur(80px);
     }
   }
@@ -478,6 +478,16 @@
 }
 
 @media screen and (max-width: 424px) {
+
+  .main {
+    .main-container {
+      .main-info {
+        .main-info-title {
+          width: 300px;
+        }
+      }
+    }
+  }
   .order {
     .order-container {
       .order-form {
@@ -494,6 +504,7 @@
   .main {
     .main-container {
       .main-info {
+        width: 300px;
         .main-info-text {
           width: 300px;
         }
