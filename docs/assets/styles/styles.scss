@@ -1,0 +1,139 @@
+@import '../../../node_modules/ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '../../../node_modules/ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+@import "variables";
+
+@font-face {
+  src: url("../fonts/Montserrat-Medium.ttf");
+  font-family: "Montserrat";
+  font-weight: 500;
+}
+
+@font-face {
+  src: url("../fonts/Montserrat-SemiBold.ttf");
+  font-family: "Montserrat";
+  font-weight: 600;
+}
+
+@font-face {
+  src: url("../fonts/Montserrat-Light.ttf");
+  font-family: "Montserrat";
+  font-weight: 400;
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #100F0E;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+.container {
+  max-width: $container-width;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.button {
+  background: #78AB0A;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: $base-text-color;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    transform: rotateX(20deg);
+    background: #5D8508FF;
+  }
+}
+
+.section-title {
+  font-size: 48px;
+}
+
+.owl-carousel .owl-item img {
+  width: initial !important; //чтобы картинки продуктов не искажались
+}
+
+.owl-theme .owl-dots .owl-dot.active span {
+  background: $orange-color;
+  border: 1px solid $orange-color;
+}
+
+.owl-theme .owl-dots .owl-dot:hover span  {
+  background: $base-text-color;
+  border: 1px solid $orange-color;
+}
+
+.owl-theme .owl-nav.disabled + .owl-dots {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.owl-theme .owl-dots .owl-dot span {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid $base-text-color;
+}
+
+
+
+@media screen and (max-width: 1439px) {
+  .container {
+    width: 996px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .container {
+    width: 738px;
+  }
+
+  .section-title {
+    font-size: 42px;
+    line-height: 120%;
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    width: 395px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .section-title {
+    font-size: 38px;
+  }
+}
+
+@media screen and (max-width: 424px) {
+  .container {
+    width: 375px;
+    box-sizing: border-box;
+  }
+
+  .section-title {
+    font-size: 32px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .container {
+    width: 100%;
+  }
+}
