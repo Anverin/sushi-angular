@@ -1,0 +1,14 @@
+<div class="menu-item" >
+  <div class="menu-item-image">
+    <img src="assets/images/{{product.image}}" alt="sushi">
+  </div>
+  <div class="menu-item-title">{{product.title}}</div>
+  <div class="menu-item-composition">Состав: {{product.composition}}</div>
+  <div class="menu-item-mass">Масса: {{product.mass}} г</div>
+  <div class="menu-item-price">Цена: {{product.price | currency : 'RUB' : 'руб.' : '1.1-1' : 'ru'}}</div>
+  <div class="menu-item-actions">
+   <product-count></product-count>
+    <div class="menu-item-button button" (click)="getProductTitle(product.title)">Заказать</div>
+  </div>
+
+</div>

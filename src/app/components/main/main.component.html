@@ -1,0 +1,123 @@
+<section class="main">
+  <div class="main-container container">
+
+    <div class="main-info" @moveBlock>
+      <div class="main-info-title">Собери свой сет сам</div>
+      <div class="main-info-text"> Самые свежие морепродукты и только свежие ингредиенты</div>
+      <button class="main-info-button button">Заказать</button>
+    </div>
+    <div class="main-image" [@fadeIn]="visibility">
+      <img src="assets/images/main-image.png" alt="rolls">
+    </div>
+  </div>
+
+  <leaves [leaf]="leaf" *ngFor="let leaf of leavesMain"></leaves>
+
+<!--  <div [@moveLeaves]="stateLeaves" (@moveLeaves.done)="movingLeaves()" class="leaves2"><img src="assets/images/leaves/leaves2.png" alt="leaves"></div>-->
+<!--  <div [@moveLeaves]="stateLeaves" class="leaves3"><img src="assets/images/leaves/leaves3.png" alt="leaves"></div>-->
+<!--  <div [@moveLeaves]="stateLeaves" class="leaves4"><img src="assets/images/leaves/leaves4.png" alt="leaves"></div>-->
+<!--  <div [@moveLeaves]="stateLeaves"  class="leaves5"><img src="assets/images/leaves/leaves5.png" alt="leaves"></div>-->
+
+  <div class="main-gradient"></div>
+
+</section>
+
+<section class="advantages" id="advantages">
+  <div class="advantages-container container">
+    <div class="advantages-title section-title">Почему выбирают нас</div>
+    <div class="advantages-text">Наборы или сеты – прекрасная возможность окунуться <br> в мир японской кухни и попробовать разные вкусовые сочетания.
+      <br> Преимущество сета в доступной цене и возможности заказа разных вариаций, тщательно подобранных нашим шеф-поваром</div>
+    <div class="advantages-items">
+      <div class="advantages-item">
+        <div class="advantages-item-image">
+          <img src="assets/images/advantage1.png" alt="cook">
+        </div>
+        <div class="advantages-item-text">Лучшие повара с большим опытом работы</div>
+      </div>
+      <div class="advantages-item">
+        <div class="advantages-item-image">
+          <img src="assets/images/advantage2.png" alt="flying set">
+        </div>
+        <div class="advantages-item-text">Разнообразный выбор
+          сетов, роллов, суши</div>
+      </div>
+      <div class="advantages-item">
+        <div class="advantages-item-image">
+          <img src="assets/images/advantage3.png" alt="salmon">
+        </div>
+        <div class="advantages-item-text">Только свежие продукты и ингредиенты</div>
+      </div>
+    </div>
+
+  </div>
+
+  <leaves [leaf]="leaf" *ngFor="let leaf of leavesAdvantages" ></leaves>
+<!--  <div [@moveLeaves]="stateLeaves" class="leaves6"><img src="assets/images/leaves/leaves6.png" alt="leaves"></div>-->
+<!--  <div [@moveLeaves]="stateLeaves" class="leaves7"><img src="assets/images/leaves/leaves7.png" alt="leaves"></div>-->
+<!--  <div [@moveLeaves]="stateLeaves" class="leaves8"><img src="assets/images/leaves/leaves8.png" alt="leaves"></div>-->
+<!--  <div [@moveLeaves]="stateLeaves" class="leaves9"><img src="assets/images/leaves/leaves9.png" alt="leaves"></div>-->
+</section>
+
+<section class="menu" id="menu">
+  <div class="menu-container container">
+    <div class="menu-title section-title">Меню</div>
+
+    <owl-carousel-o [options]="customOptions" #owlCar>
+      <ng-template carouselSlide> <div class="menu-items" >
+<product-card (orderClick)=addToCart($event) [product]="product" *ngFor="let product of products; let i = index;"></product-card>
+      </div></ng-template>
+
+      <ng-template carouselSlide> <div class="menu-items">
+        <product-card [product]="product" *ngFor="let product of products2; let i = index;"></product-card>
+      </div></ng-template>
+      <ng-template carouselSlide> <div class="menu-items">
+        <product-card [product]="product" *ngFor="let product of products3; let i = index;"></product-card>
+      </div></ng-template>
+      <ng-template carouselSlide> <div class="menu-items">
+        <product-card [product]="product" *ngFor="let product of products4; let i = index;"></product-card>
+      </div></ng-template>
+    </owl-carousel-o>
+
+    <div class="menu-arrows">
+      <div class="arrow-prev" (click)="owlCar.prev()">
+        <svg  width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M17.8652 9C17.8652 9.31066 17.5894 9.5625 17.2492 9.5625L2.46346 9.5625C2.12321 9.5625 1.84738 9.31066 1.84738 9C1.84738 8.68934 2.12321 8.4375 2.46346 8.4375L17.2492 8.4375C17.5894 8.4375 17.8652 8.68934 17.8652 9Z" fill="#ED8633"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M7.82835 13.8977C7.58776 14.1174 7.19768 14.1174 6.95709 13.8977L2.02852 9.39775C1.78793 9.17808 1.78793 8.82192 2.02852 8.60225L6.95709 4.10225C7.19768 3.88258 7.58776 3.88258 7.82835 4.10225C8.06894 4.32192 8.06894 4.67808 7.82835 4.89775L3.3354 9L7.82835 13.1023C8.06894 13.3219 8.06894 13.6781 7.82835 13.8977Z" fill="#ED8633"/>
+        </svg>
+      </div>
+      <div class="arrow-next" (click)="owlCar.next()">
+        <svg width="21" height="18" viewBox="0 0 21 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M2.5625 9C2.5625 8.68934 2.83832 8.4375 3.17857 8.4375H17.9643C18.3045 8.4375 18.5804 8.68934 18.5804 9C18.5804 9.31066 18.3045 9.5625 17.9643 9.5625H3.17857C2.83832 9.5625 2.5625 9.31066 2.5625 9Z" fill="#ED8633"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M12.5994 4.10225C12.84 3.88258 13.2301 3.88258 13.4706 4.10225L18.3992 8.60225C18.6398 8.82192 18.6398 9.17808 18.3992 9.39775L13.4706 13.8977C13.2301 14.1174 12.84 14.1174 12.5994 13.8977C12.3588 13.6781 12.3588 13.3219 12.5994 13.1023L17.0923 9L12.5994 4.89775C12.3588 4.67808 12.3588 4.32192 12.5994 4.10225Z" fill="#ED8633"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="order" id="order">
+  <div class="sushi-image">
+    <img src="assets/images/sushi-bottom.png" alt="sushi">
+  </div>
+  <div class="order-container container">
+    <div class="order-form">
+      <div class="order-form-title section-title">Оформить заказ</div>
+      <div class="order-form-text">Мы вам перезвоним</div>
+      <input class="order-form-input" type="text" placeholder="Имя" [(ngModel)]="formValues.name">
+      <input class="order-form-input" type="text" prefix="+7" mask=" (000) 000-00-00"  placeholder="+7 (...) ...-..-.." [(ngModel)]="formValues.phone">
+      <input class="order-form-input" type="text" placeholder="Название товара" [(ngModel)]="formValues.productTitle">
+      <button class="order-form-button button">Заказать</button>
+      <div class="order-form-agreement"><a href="#">Согласие на обработку персональных данных</a></div>
+    </div>
+    <div class="set-image">
+      <img src="assets/images/set-bottom.png" alt="set">
+    </div>
+  </div>
+
+  <leaves [leaf]="leaf" *ngFor="let leaf of leavesOrder" ></leaves>
+
+<!--  <div [@moveLeaves]="stateLeaves" class="leaves10"><img src="assets/images/leaves/leaves10.png" alt="leaves"></div>-->
+<!--  <div [@moveLeaves]="stateLeaves" class="leaves11"><img src="assets/images/leaves/leaves11.png" alt="leaves"></div>-->
+<!--  <div [@moveLeaves]="stateLeaves" class="leaves12"><img src="assets/images/leaves/leaves12.png" alt="leaves"></div>-->
+</section>
+

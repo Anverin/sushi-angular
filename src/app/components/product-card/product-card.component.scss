@@ -1,0 +1,67 @@
+@import "../../../assets/styles/variables";
+
+.menu-item {
+  width: 310px;
+  margin-bottom: 80px;
+  position: relative;
+  min-height: 474px;
+}
+
+.menu-item-image {
+  height: 224px;
+}
+
+.menu-item-title {
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 10px;
+}
+
+.menu-item-composition,
+.menu-item-mass {
+  font-size: 18px;
+  line-height: 22px;
+  margin-bottom: 10px;
+}
+
+.menu-item-price {
+  font-size: 18px;
+  color: $orange-color;
+  margin-bottom: 64px;
+}
+
+.menu-item-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 310px;
+}
+
+
+.menu-item-button {
+  width: 168px;
+  padding: 15px 40px;
+  box-sizing: border-box;
+}
+
+
+@media screen and (max-width: 375px) {
+  .menu-item {
+    width: 298px;
+    .menu-item-actions {
+      width: 100%;
+
+      .menu-item-button {
+        width: 160px;
+        padding: 12px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+
+
+
