@@ -1,6 +1,6 @@
 # SushiAngular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.13.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.13. Adaptive layout (HTML, SCSS, flex, media queries), animation using Angular (I consider it my achievement to develop animation of background decorations at random speed), Owl Carousel.
 
 ## Development server
 
